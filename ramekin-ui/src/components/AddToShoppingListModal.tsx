@@ -137,21 +137,30 @@ export default function AddToShoppingListModal(
           </div>
 
           <div class="ingredient-select-list">
-            <For each={ingredients()}>
-              {(ing, index) => (
-                <label class="ingredient-select-item">
-                  <input
-                    type="checkbox"
-                    checked={selectedIndices().has(index())}
-                    onChange={() => toggleIngredient(index())}
-                  />
-                  <span class="ingredient-text">
-                    {formatIngredient(ing, {
-                      scale: scale(),
-                      includeNote: true,
-                    })}
-                  </span>
-                </label>
+            <For each={props.recipe.shoppingGroups}>
+              {(group) => (
+                <div class="ingredient-select-group">
+                  <h4 class="ingredient-select-group-header">
+                    {group.category}
+                  </h4>
+                  <For each={group.ingredientIndices}>
+                    {(index) => (
+                      <label class="ingredient-select-item">
+                        <input
+                          type="checkbox"
+                          checked={selectedIndices().has(index)}
+                          onChange={() => toggleIngredient(index)}
+                        />
+                        <span class="ingredient-text">
+                          {formatIngredient(ingredients()[index], {
+                            scale: scale(),
+                            includeNote: true,
+                          })}
+                        </span>
+                      </label>
+                    )}
+                  </For>
+                </div>
               )}
             </For>
           </div>

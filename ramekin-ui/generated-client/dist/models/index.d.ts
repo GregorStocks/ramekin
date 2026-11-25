@@ -69,6 +69,7 @@ export * from './RescrapeResponse';
 export * from './RetryScrapeResponse';
 export * from './ScrapeJobResponse';
 export * from './ScrapeJobStatus';
+export * from './ShoppingGroup';
 export * from './ShoppingListFields';
 export * from './ShoppingListHistoryEntry';
 export * from './ShoppingListHistoryResponse';

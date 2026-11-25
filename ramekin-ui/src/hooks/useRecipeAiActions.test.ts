@@ -9,6 +9,7 @@ function recipe(): RecipeResponse {
     description: null,
     ingredients: [],
     derivedMeasurements: [],
+    shoppingGroups: [],
     instructions: "Simmer",
     photoIds: [],
     tags: [],

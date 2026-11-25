@@ -84,6 +84,7 @@ from ramekin_client.models.rescrape_response import RescrapeResponse
 from ramekin_client.models.retry_scrape_response import RetryScrapeResponse
 from ramekin_client.models.scrape_job_response import ScrapeJobResponse
 from ramekin_client.models.scrape_job_status import ScrapeJobStatus
+from ramekin_client.models.shopping_group import ShoppingGroup
 from ramekin_client.models.shopping_list_fields import ShoppingListFields
 from ramekin_client.models.shopping_list_history_entry import ShoppingListHistoryEntry
 from ramekin_client.models.shopping_list_history_response import ShoppingListHistoryResponse

@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **prep_time** | Option<**String**> |  | [optional]
 **rating** | Option<**i32**> |  | [optional]
 **servings** | Option<**String**> |  | [optional]
+**shopping_groups** | [**Vec<models::ShoppingGroup>**](ShoppingGroup.md) | Ingredients grouped by the category each would get on the shopping list, in shopping-list category order. | 
 **source_name** | Option<**String**> |  | [optional]
 **source_url** | Option<**String**> |  | [optional]
 **tags** | **Vec<String>** |  | 

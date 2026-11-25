@@ -69,6 +69,7 @@ final class RecipePDFRendererTests: XCTestCase {
             prepTime: "5 min",
             rating: nil,
             servings: "4",
+            shoppingGroups: [],
             sourceName: "Example",
             sourceUrl: "https://example.com/recipe",
             tags: [],

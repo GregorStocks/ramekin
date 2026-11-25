@@ -7,6 +7,7 @@ use crate::ingredient_names::load_learned;
 use crate::models::{derived_measurements, DerivedMeasurement, Ingredient, RecipeVersion};
 use crate::raw_sql;
 use crate::schema::{recipe_versions, recipes};
+use crate::shopping_list::{group_by_category, ShoppingGroup};
 use axum::{
     extract::{Path, Query, State},
     http::StatusCode,
@@ -28,6 +29,9 @@ pub struct RecipeResponse {
     pub ingredients: Vec<Ingredient>,
     /// Approximate grams for ingredients that have them, in ingredient order.
     pub derived_measurements: Vec<DerivedMeasurement>,
+    /// Ingredients grouped by the category each would get on the shopping
+    /// list, in shopping-list category order.
+    pub shopping_groups: Vec<ShoppingGroup>,
     pub instructions: String,
     pub source_url: Option<String>,
     pub source_name: Option<String>,
@@ -62,6 +66,8 @@ impl RecipeResponse {
         tags: Vec<String>,
     ) -> Self {
         let derived_measurements = derived_measurements(&ingredients, learned);
+        let items: Vec<&str> = ingredients.iter().map(|i| i.item.as_str()).collect();
+        let shopping_groups = group_by_category(&items, learned);
 
         Self {
             id,
@@ -69,6 +75,7 @@ impl RecipeResponse {
             description: version.description,
             ingredients,
             derived_measurements,
+            shopping_groups,
             instructions: version.instructions,
             source_url: version.source_url,
             source_name: version.source_name,

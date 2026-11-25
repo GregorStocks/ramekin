@@ -84,6 +84,7 @@ pub fn router() -> Router<AppState> {
         list::SortBy,
         list::Direction,
         get::RecipeResponse,
+        crate::shopping_list::ShoppingGroup,
         estimate_calories::EstimateCaloriesRequest,
         estimate_calories::CalorieEstimateResponse,
         estimate_calories::CalorieRange,

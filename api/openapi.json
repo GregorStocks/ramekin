@@ -4328,6 +4328,7 @@
           "title",
           "ingredients",
           "derived_measurements",
+          "shopping_groups",
           "instructions",
           "photo_ids",
           "tags",
@@ -4424,6 +4425,13 @@
               "string",
               "null"
             ]
+          },
+          "shopping_groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ShoppingGroup"
+            },
+            "description": "Ingredients grouped by the category each would get on the shopping\nlist, in shopping-list category order."
           },
           "source_name": {
             "type": [
@@ -4685,6 +4693,27 @@
           "completed",
           "failed"
         ]
+      },
+      "ShoppingGroup": {
+        "type": "object",
+        "description": "A recipe's ingredients that share a shopping-list category.",
+        "required": [
+          "category",
+          "ingredient_indices"
+        ],
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "ingredient_indices": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "description": "Indices into the recipe's ingredients, in ingredient order."
+          }
+        }
       },
       "ShoppingListFields": {
         "type": "object",

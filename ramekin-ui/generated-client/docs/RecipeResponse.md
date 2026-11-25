@@ -21,6 +21,7 @@ Name | Type
 `prepTime` | string
 `rating` | number
 `servings` | string
+`shoppingGroups` | [Array&lt;ShoppingGroup&gt;](ShoppingGroup.md)
 `sourceName` | string
 `sourceUrl` | string
 `tags` | Array&lt;string&gt;
@@ -52,6 +53,7 @@ const example = {
   "prepTime": null,
   "rating": null,
   "servings": null,
+  "shoppingGroups": null,
   "sourceName": null,
   "sourceUrl": null,
   "tags": null,

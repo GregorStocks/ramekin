@@ -187,6 +187,7 @@ Class | Method | HTTP request | Description
  - [RetryScrapeResponse](ramekin_client/docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](ramekin_client/docs/ScrapeJobResponse.md)
  - [ScrapeJobStatus](ramekin_client/docs/ScrapeJobStatus.md)
+ - [ShoppingGroup](ramekin_client/docs/ShoppingGroup.md)
  - [ShoppingListFields](ramekin_client/docs/ShoppingListFields.md)
  - [ShoppingListHistoryEntry](ramekin_client/docs/ShoppingListHistoryEntry.md)
  - [ShoppingListHistoryResponse](ramekin_client/docs/ShoppingListHistoryResponse.md)

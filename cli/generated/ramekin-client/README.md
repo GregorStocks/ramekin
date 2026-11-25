@@ -150,6 +150,7 @@ Class | Method | HTTP request | Description
  - [RetryScrapeResponse](docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](docs/ScrapeJobResponse.md)
  - [ScrapeJobStatus](docs/ScrapeJobStatus.md)
+ - [ShoppingGroup](docs/ShoppingGroup.md)
  - [ShoppingListFields](docs/ShoppingListFields.md)
  - [ShoppingListHistoryEntry](docs/ShoppingListHistoryEntry.md)
  - [ShoppingListHistoryResponse](docs/ShoppingListHistoryResponse.md)

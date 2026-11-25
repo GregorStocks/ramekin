@@ -298,31 +298,7 @@ final class RecipeFormViewModelTests: XCTestCase {
     }
 
     func testEditHasUnsavedChangesOnlyAfterAnEdit() async {
-        let recipe = RecipeResponse(
-            cookTime: nil,
-            createdAt: Date(timeIntervalSince1970: 100),
-            derivedMeasurements: [],
-            description: nil,
-            difficulty: nil,
-            id: UUID(),
-            ingredients: [],
-            instructions: "Mix",
-            normalizeOps: [],
-            notes: nil,
-            nutritionalInfo: nil,
-            photoIds: [],
-            prepTime: nil,
-            rating: nil,
-            servings: nil,
-            sourceName: nil,
-            sourceUrl: nil,
-            tags: [],
-            title: "Plain",
-            totalTime: nil,
-            updatedAt: Date(timeIntervalSince1970: 200),
-            versionId: UUID(),
-            versionSource: "user"
-        )
+        let recipe = makeRecipe()
         let model = RecipeFormViewModel(mode: .edit(recipeId: recipe.id), api: RecipeFormViewAPIClient(
             updateRecipe: { _, _ in throw TestError.unexpectedCall },
             getRecipe: { _ in recipe },
@@ -332,9 +308,9 @@ final class RecipeFormViewModelTests: XCTestCase {
         XCTAssertFalse(model.hasUnsavedChanges, "Nothing to lose before the recipe loads")
         await model.loadRecipe(id: recipe.id)
         XCTAssertFalse(model.hasUnsavedChanges)
-        model.formData.title = "Plainer"
+        model.formData.title = "Soupier"
         XCTAssertTrue(model.hasUnsavedChanges)
-        model.formData.title = "Plain"
+        model.formData.title = "Soup"
         XCTAssertFalse(model.hasUnsavedChanges)
         model.isUploadingPhoto = true
         XCTAssertTrue(model.hasUnsavedChanges, "A pending photo upload would be lost")
@@ -444,6 +420,7 @@ private func makeRecipe() -> RecipeResponse {
         prepTime: nil,
         rating: nil,
         servings: nil,
+        shoppingGroups: [],
         sourceName: nil,
         sourceUrl: nil,
         tags: [],

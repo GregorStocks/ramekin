@@ -90,6 +90,41 @@ pub fn reconcile_categories(pool: &DbPool) -> Result<usize, String> {
     .map_err(|e| e.to_string())
 }
 
+/// A recipe's ingredients that share a shopping-list category.
+#[derive(Debug, Clone, PartialEq, serde::Serialize, utoipa::ToSchema)]
+pub struct ShoppingGroup {
+    pub category: String,
+    /// Indices into the recipe's ingredients, in ingredient order.
+    pub ingredient_indices: Vec<usize>,
+}
+
+/// Group `items` by the category each would get on the shopping list, in
+/// the canonical category order; categories with no items are absent.
+pub fn group_by_category(
+    items: &[&str],
+    learned: &ramekin_core::catalog::Learned,
+) -> Vec<ShoppingGroup> {
+    let categories: Vec<&'static str> = items
+        .iter()
+        .map(|item| ingredient_categorizer::categorize_with(item, learned))
+        .collect();
+    ingredient_categorizer::CATEGORIES
+        .into_iter()
+        .filter_map(|category| {
+            let ingredient_indices: Vec<usize> = categories
+                .iter()
+                .enumerate()
+                .filter(|(_, c)| **c == category)
+                .map(|(i, _)| i)
+                .collect();
+            (!ingredient_indices.is_empty()).then(|| ShoppingGroup {
+                category: category.to_string(),
+                ingredient_indices,
+            })
+        })
+        .collect()
+}
+
 pub fn item_category(computed_category: &str, category_override: Option<&str>) -> String {
     category_override.unwrap_or(computed_category).to_string()
 }

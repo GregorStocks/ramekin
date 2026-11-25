@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **prepTime** | **String** |  | [optional] 
 **rating** | **Int** |  | [optional] 
 **servings** | **String** |  | [optional] 
+**shoppingGroups** | [ShoppingGroup] | Ingredients grouped by the category each would get on the shopping list, in shopping-list category order. | 
 **sourceName** | **String** |  | [optional] 
 **sourceUrl** | **String** |  | [optional] 
 **tags** | **[String]** |  | 

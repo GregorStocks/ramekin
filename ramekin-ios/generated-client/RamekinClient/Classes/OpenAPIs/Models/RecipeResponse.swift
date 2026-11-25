@@ -29,6 +29,8 @@ public struct RecipeResponse: Codable, JSONEncodable, Hashable {
     public var prepTime: String?
     public var rating: Int?
     public var servings: String?
+    /** Ingredients grouped by the category each would get on the shopping list, in shopping-list category order. */
+    public var shoppingGroups: [ShoppingGroup]
     public var sourceName: String?
     public var sourceUrl: String?
     public var tags: [String]
@@ -40,7 +42,7 @@ public struct RecipeResponse: Codable, JSONEncodable, Hashable {
     public var versionId: UUID
     public var versionSource: String
 
-    public init(cookTime: String? = nil, createdAt: Date, derivedMeasurements: [DerivedMeasurement], description: String? = nil, difficulty: String? = nil, id: UUID, ingredients: [Ingredient], instructions: String, normalizeOps: [String], notes: String? = nil, nutritionalInfo: String? = nil, photoIds: [UUID], prepTime: String? = nil, rating: Int? = nil, servings: String? = nil, sourceName: String? = nil, sourceUrl: String? = nil, tags: [String], title: String, totalTime: String? = nil, updatedAt: Date, versionId: UUID, versionSource: String) {
+    public init(cookTime: String? = nil, createdAt: Date, derivedMeasurements: [DerivedMeasurement], description: String? = nil, difficulty: String? = nil, id: UUID, ingredients: [Ingredient], instructions: String, normalizeOps: [String], notes: String? = nil, nutritionalInfo: String? = nil, photoIds: [UUID], prepTime: String? = nil, rating: Int? = nil, servings: String? = nil, shoppingGroups: [ShoppingGroup], sourceName: String? = nil, sourceUrl: String? = nil, tags: [String], title: String, totalTime: String? = nil, updatedAt: Date, versionId: UUID, versionSource: String) {
         self.cookTime = cookTime
         self.createdAt = createdAt
         self.derivedMeasurements = derivedMeasurements
@@ -56,6 +58,7 @@ public struct RecipeResponse: Codable, JSONEncodable, Hashable {
         self.prepTime = prepTime
         self.rating = rating
         self.servings = servings
+        self.shoppingGroups = shoppingGroups
         self.sourceName = sourceName
         self.sourceUrl = sourceUrl
         self.tags = tags
@@ -82,6 +85,7 @@ public struct RecipeResponse: Codable, JSONEncodable, Hashable {
         case prepTime = "prep_time"
         case rating
         case servings
+        case shoppingGroups = "shopping_groups"
         case sourceName = "source_name"
         case sourceUrl = "source_url"
         case tags
@@ -111,6 +115,7 @@ public struct RecipeResponse: Codable, JSONEncodable, Hashable {
         try container.encodeIfPresent(prepTime, forKey: .prepTime)
         try container.encodeIfPresent(rating, forKey: .rating)
         try container.encodeIfPresent(servings, forKey: .servings)
+        try container.encode(shoppingGroups, forKey: .shoppingGroups)
         try container.encodeIfPresent(sourceName, forKey: .sourceName)
         try container.encodeIfPresent(sourceUrl, forKey: .sourceUrl)
         try container.encode(tags, forKey: .tags)

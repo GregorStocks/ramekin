@@ -111,3 +111,30 @@ def test_saving_a_read_recipe_stores_no_grams(authed_api_client):
     # An earlier version gets its own grams too.
     old = recipes.get_recipe(recipe_id, version_id=original.version_id)
     assert derived(old) == [{"ingredient_index": 0, "amount": "227", "unit": "g"}]
+
+
+def test_reads_group_ingredients_by_shopping_category(authed_api_client):
+    client, _ = authed_api_client
+    recipes = RecipesApi(client)
+    ingredients = [
+        make_ingredient("butter", "8", "oz"),
+        make_ingredient("yellow onion", "1"),
+        make_ingredient("sugar", "2", "tbsp"),
+        make_ingredient("garlic", "2", "cloves"),
+        make_ingredient("milk", "1", "cup"),
+    ]
+    recipe = recipes.get_recipe(create(recipes, ingredients))
+
+    assert [g.to_dict() for g in recipe.shopping_groups] == [
+        {"category": "Produce", "ingredient_indices": [1, 3]},
+        {"category": "Dairy & Eggs", "ingredient_indices": [0, 4]},
+        {"category": "Baking", "ingredient_indices": [2]},
+    ]
+
+
+def test_recipe_with_no_ingredients_has_no_shopping_groups(authed_api_client):
+    client, _ = authed_api_client
+    recipes = RecipesApi(client)
+    recipe = recipes.get_recipe(create(recipes, []))
+
+    assert recipe.shopping_groups == []

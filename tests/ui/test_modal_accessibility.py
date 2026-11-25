@@ -13,8 +13,9 @@ from ramekin_client.api import AuthApi, RecipesApi
 from ramekin_client.models import CreateRecipeRequest, Ingredient, SignupRequest
 
 
-@pytest.fixture
-def modal_page(page: Page, api_url: str, ui_url: str) -> Page:
+def open_recipe_page(
+    page: Page, api_url: str, ui_url: str, title: str, items: list[str]
+) -> None:
     configuration = Configuration(host=api_url)
     with ApiClient(configuration) as client:
         signup = AuthApi(client).signup(
@@ -26,18 +27,20 @@ def modal_page(page: Page, api_url: str, ui_url: str) -> Page:
     with ApiClient(configuration) as client:
         recipe = RecipesApi(client).create_recipe(
             CreateRecipeRequest(
-                title="Modal test soup",
+                title=title,
                 instructions="Simmer until tender.",
-                ingredients=[
-                    Ingredient(item="carrots", measurements=[]),
-                    Ingredient(item="onions", measurements=[]),
-                ],
+                ingredients=[Ingredient(item=item, measurements=[]) for item in items],
             )
         )
     page.goto(ui_url)
     page.evaluate("token => localStorage.setItem('token', token)", signup.token)
     page.goto(f"{ui_url}/recipes/{recipe.id}")
     expect(page.locator(".ingredients-list")).to_be_visible()
+
+
+@pytest.fixture
+def modal_page(page: Page, api_url: str, ui_url: str) -> Page:
+    open_recipe_page(page, api_url, ui_url, "Modal test soup", ["carrots", "onions"])
     return page
 
 
@@ -116,7 +119,7 @@ def test_dialog_skips_disabled_controls_and_backdrop_restores_scroll(modal_page:
     expect(dialog.get_by_role("button", name="Select All")).to_be_focused()
 
     # Clicking content must not dismiss; clicking the empty backdrop must.
-    dialog.get_by_role("heading").click()
+    dialog.get_by_role("heading", name="Add to Shopping List").click()
     expect(dialog).to_be_visible()
     page.mouse.click(4, 4)
     expect(dialog).not_to_be_visible()
@@ -127,7 +130,7 @@ def test_dialog_skips_disabled_controls_and_backdrop_restores_scroll(modal_page:
 def test_dialog_keeps_focus_when_async_action_removes_controls(modal_page: Page):
     page = modal_page
     dialog = open_recipe_modal(page, "Add to Shopping List")
-    heading = dialog.get_by_role("heading")
+    heading = dialog.get_by_role("heading", name="Add to Shopping List")
     pending: list[Route] = []
     page.route("**/api/sync/shopping-list", lambda route: pending.append(route))
     frozen_time = datetime(2026, 9, 9, tzinfo=timezone.utc)
@@ -327,3 +330,20 @@ def test_dialog_restores_direct_opener_and_cleans_up_on_navigation(
     username = page.get_by_role("textbox", name="Username", exact=True)
     username.focus()
     expect(username).to_be_focused()
+
+
+def test_shopping_dialog_groups_ingredients_by_category(
+    page: Page, api_url: str, ui_url: str
+):
+    open_recipe_page(
+        page, api_url, ui_url, "Grouped soup", ["butter", "carrots", "milk", "onions"]
+    )
+    dialog = open_recipe_modal(page, "Add to Shopping List")
+    groups = dialog.locator(".ingredient-select-group")
+    expect(groups.locator(".ingredient-select-group-header")).to_have_text(
+        ["Produce", "Dairy & Eggs"]
+    )
+    expect(groups.nth(0).locator(".ingredient-text")).to_have_text(
+        ["carrots", "onions"]
+    )
+    expect(groups.nth(1).locator(".ingredient-text")).to_have_text(["butter", "milk"])

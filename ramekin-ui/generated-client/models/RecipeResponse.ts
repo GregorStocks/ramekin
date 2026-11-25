@@ -27,6 +27,13 @@ import {
     DerivedMeasurementToJSON,
     DerivedMeasurementToJSONTyped,
 } from './DerivedMeasurement';
+import type { ShoppingGroup } from './ShoppingGroup';
+import {
+    ShoppingGroupFromJSON,
+    ShoppingGroupFromJSONTyped,
+    ShoppingGroupToJSON,
+    ShoppingGroupToJSONTyped,
+} from './ShoppingGroup';
 
 /**
  * 
@@ -125,6 +132,13 @@ export interface RecipeResponse {
      */
     servings?: string | null;
     /**
+     * Ingredients grouped by the category each would get on the shopping
+     * list, in shopping-list category order.
+     * @type {Array<ShoppingGroup>}
+     * @memberof RecipeResponse
+     */
+    shoppingGroups: Array<ShoppingGroup>;
+    /**
      * 
      * @type {string}
      * @memberof RecipeResponse
@@ -185,6 +199,7 @@ export function instanceOfRecipeResponse(value: object): value is RecipeResponse
     if (!('instructions' in value) || value['instructions'] === undefined) return false;
     if (!('normalizeOps' in value) || value['normalizeOps'] === undefined) return false;
     if (!('photoIds' in value) || value['photoIds'] === undefined) return false;
+    if (!('shoppingGroups' in value) || value['shoppingGroups'] === undefined) return false;
     if (!('tags' in value) || value['tags'] === undefined) return false;
     if (!('title' in value) || value['title'] === undefined) return false;
     if (!('updatedAt' in value) || value['updatedAt'] === undefined) return false;
@@ -218,6 +233,7 @@ export function RecipeResponseFromJSONTyped(json: any, ignoreDiscriminator: bool
         'prepTime': json['prep_time'] == null ? undefined : json['prep_time'],
         'rating': json['rating'] == null ? undefined : json['rating'],
         'servings': json['servings'] == null ? undefined : json['servings'],
+        'shoppingGroups': ((json['shopping_groups'] as Array<any>).map(ShoppingGroupFromJSON)),
         'sourceName': json['source_name'] == null ? undefined : json['source_name'],
         'sourceUrl': json['source_url'] == null ? undefined : json['source_url'],
         'tags': json['tags'],
@@ -255,6 +271,7 @@ export function RecipeResponseToJSONTyped(value?: RecipeResponse | null, ignoreD
         'prep_time': value['prepTime'],
         'rating': value['rating'],
         'servings': value['servings'],
+        'shopping_groups': ((value['shoppingGroups'] as Array<any>).map(ShoppingGroupToJSON)),
         'source_name': value['sourceName'],
         'source_url': value['sourceUrl'],
         'tags': value['tags'],

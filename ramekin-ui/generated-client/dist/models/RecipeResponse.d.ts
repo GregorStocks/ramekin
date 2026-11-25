@@ -11,6 +11,7 @@
  */
 import type { Ingredient } from './Ingredient';
 import type { DerivedMeasurement } from './DerivedMeasurement';
+import type { ShoppingGroup } from './ShoppingGroup';
 /**
  *
  * @export
@@ -107,6 +108,13 @@ export interface RecipeResponse {
      * @memberof RecipeResponse
      */
     servings?: string | null;
+    /**
+     * Ingredients grouped by the category each would get on the shopping
+     * list, in shopping-list category order.
+     * @type {Array<ShoppingGroup>}
+     * @memberof RecipeResponse
+     */
+    shoppingGroups: Array<ShoppingGroup>;
     /**
      *
      * @type {string}
