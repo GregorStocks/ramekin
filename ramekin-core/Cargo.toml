@@ -56,7 +56,7 @@ uuid = { version = "1.23", features = ["v4", "serde"] }
 # We use openai-api-rs rather than async-openai because async-openai
 # strict-types OpenAI's exact spec (e.g. ServiceTier enum) and breaks on
 # OpenRouter's extension values like service_tier="standard".
-openai-api-rs = "10"
+openai-api-rs = { version = "10", default-features = false, features = ["rustls"] }
 
 # Hashing for cache keys
 sha2 = "0.11"
