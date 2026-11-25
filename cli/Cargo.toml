@@ -6,7 +6,9 @@ authors = ["Gregor Stocks"]
 license = "LicenseRef-Proprietary"
 
 [dependencies]
-ramekin_client = { path = "generated/ramekin-client" }
+# rustls instead of the generated client's default native-tls, so builds
+# don't depend on the host OpenSSL version.
+ramekin_client = { path = "generated/ramekin-client", default-features = false, features = ["rustls-tls"] }
 ramekin-core = { path = "../ramekin-core" }
 
 # CLI
