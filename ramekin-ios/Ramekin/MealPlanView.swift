@@ -42,6 +42,9 @@ struct MealPlanView: View {
     /// the picker sheet can leave the week scrolled back to Monday, so the
     /// edited day is brought back into view explicitly.
     @State private var scrollTarget: Date?
+    /// Whether the first appearance has scrolled to today yet; later visits
+    /// to the tab keep wherever the user left the week.
+    @State private var didScrollToToday = false
 
     private let logger = DebugLogger.shared
 
@@ -67,6 +70,7 @@ struct MealPlanView: View {
 
                     Button("Today") {
                         weekStart = MealPlanDateSupport.mondayStart(from: Date())
+                        scrollTarget = Calendar.current.startOfDay(for: Date())
                     }
 
                     Spacer()
@@ -169,6 +173,16 @@ struct MealPlanView: View {
                     }
                 }
             }
+            .onAppear {
+                guard !didScrollToToday else { return }
+                didScrollToToday = true
+                let today = Calendar.current.startOfDay(for: Date())
+                guard daysInWeek.contains(today) else { return }
+                // Wait a turn so the lazy stack has laid out before scrolling.
+                DispatchQueue.main.async {
+                    proxy.scrollTo(today, anchor: .top)
+                }
+            }
             .onChange(of: scrollTarget) { target in
                 guard let target else { return }
                 withAnimation {
@@ -216,7 +230,7 @@ struct MealPlanView: View {
                 Spacer()
             }
             .padding(.horizontal)
-            .padding(.vertical, 10)
+            .padding(.vertical, 8)
             .background(isToday ? Color.orange : Color(.systemGray6))
 
             // Meal type sections
@@ -226,7 +240,7 @@ struct MealPlanView: View {
                 }
             }
             .padding(.horizontal)
-            .padding(.vertical, 8)
+            .padding(.vertical, 6)
 
             Divider()
         }
@@ -239,11 +253,32 @@ struct MealPlanView: View {
     private func mealSlot(date: Date, mealType: MealType) -> some View {
         let meals = mealsFor(date: date, mealType: mealType)
         return VStack(alignment: .leading, spacing: 4) {
-            Text(mealType.displayLabel)
-                .font(.subheadline)
-                .fontWeight(.medium)
-                .foregroundColor(.secondary)
-                .padding(.top, 6)
+            HStack {
+                Text(mealType.displayLabel)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundColor(.secondary)
+
+                Spacer()
+
+                Button {
+                    pickerDate = date
+                    pickerMealType = mealType
+                    showingRecipePicker = true
+                } label: {
+                    Image(systemName: "plus.circle")
+                        .font(.body)
+                        .foregroundColor(.orange)
+                        .frame(width: 44, height: 44)
+                        .contentShape(Rectangle())
+                }
+                // Keep the full 44pt tap target without making the row
+                // that tall.
+                .padding(.vertical, -10)
+                .padding(.trailing, -10)
+                .accessibilityLabel("Add \(mealType.displayLabel) on \(dayHeaderText(date))")
+            }
+            .padding(.vertical, 4)
 
             ForEach(meals) { meal in
                 MealPlanItemCard(
@@ -252,19 +287,6 @@ struct MealPlanView: View {
                     onDelete: { deletingMealPlan = meal }
                 )
             }
-
-            Button {
-                pickerDate = date
-                pickerMealType = mealType
-                showingRecipePicker = true
-            } label: {
-                Label("Add", systemImage: "plus.circle")
-                    .font(.caption)
-                    .foregroundColor(.orange)
-                    .frame(minHeight: 44)
-                    .contentShape(Rectangle())
-            }
-            .accessibilityLabel("Add \(mealType.displayLabel) on \(dayHeaderText(date))")
         }
     }
 

@@ -282,6 +282,11 @@
   max-width: 1200px;
 }
 
+/* The week grid needs width for seven readable columns. */
+.app-main:has(.meal-plan-page) {
+  max-width: 1600px;
+}
+
 /* Wide fluid container for the cookbook — fill big displays with a
    sanity cap and a clamp-based gutter instead of fixed 1200px. */
 .app-main:has(.cookbook-page) {
