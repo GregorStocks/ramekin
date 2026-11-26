@@ -287,42 +287,69 @@ export default function ShoppingListPage() {
           </Show>
         </span>
       </label>
-      <Show when={item.sourceRecipeId && item.sourceRecipeTitle}>
-        <A
-          href={`/recipes/${item.sourceRecipeId}`}
-          class="shopping-item-source"
-        >
-          {item.sourceRecipeTitle}
-        </A>
+      <Show when={item.note || (item.sourceRecipeId && item.sourceRecipeTitle)}>
+        <span class="shopping-item-meta">
+          <Show when={item.note}>
+            <span class="shopping-item-note">{item.note}</span>
+          </Show>
+          <Show when={item.sourceRecipeId && item.sourceRecipeTitle}>
+            <A
+              href={`/recipes/${item.sourceRecipeId}`}
+              class="shopping-item-source"
+            >
+              {item.sourceRecipeTitle}
+            </A>
+          </Show>
+        </span>
       </Show>
-      <select
-        class="shopping-category-select"
-        value={item.categoryOverride ?? ""}
-        disabled={updatingCategoryIds().has(item.id)}
-        title="Category"
-        onChange={(e) =>
-          handleCategoryChange(item, e.currentTarget.value || null)
-        }
-      >
-        <option value="">Auto</option>
-        <For each={categoryOrder()}>
-          {(category) => <option value={category}>{category}</option>}
-        </For>
-      </select>
-      <button
-        class="shopping-item-delete"
-        onClick={() => handleDelete(item)}
-        title="Delete item"
-      >
-        &times;
-      </button>
+      <span class="shopping-item-actions">
+        {/* An icon that opens the native aisle menu; the select sits
+            invisibly on top of it. */}
+        <span class="shopping-category-picker" title="Move to another aisle">
+          <select
+            class="shopping-category-select"
+            aria-label={`Aisle for ${item.item}`}
+            value={item.categoryOverride ?? ""}
+            disabled={updatingCategoryIds().has(item.id)}
+            onChange={(e) =>
+              handleCategoryChange(item, e.currentTarget.value || null)
+            }
+          >
+            <option value="">Auto</option>
+            <For each={categoryOrder()}>
+              {(category) => <option value={category}>{category}</option>}
+            </For>
+          </select>
+        </span>
+        <button
+          class="shopping-item-delete"
+          onClick={() => handleDelete(item)}
+          title="Delete item"
+          aria-label={`Delete ${item.item}`}
+        >
+          &times;
+        </button>
+      </span>
     </li>
   );
+
+  const uncheckedCount = () => items().length - checkedItems().length;
 
   return (
     <div class="shopping-list-page">
       <div class="page-header">
-        <h2>Shopping List</h2>
+        <div class="shopping-title">
+          <h2>Shopping List</h2>
+          <Show when={!loading() && items().length > 0}>
+            <span class="shopping-summary">
+              {uncheckedCount()} to get
+              <Show when={checkedItems().length > 0}>
+                {" "}
+                &middot; {checkedItems().length} checked
+              </Show>
+            </span>
+          </Show>
+        </div>
         <div class="shopping-header-actions">
           <Show when={hasCheckedItems()}>
             <button
@@ -394,7 +421,12 @@ export default function ShoppingListPage() {
           <For each={uncheckedCategories()}>
             {(category) => (
               <div class="shopping-category-group">
-                <h3 class="shopping-category-header">{category}</h3>
+                <h3 class="shopping-category-header">
+                  {category}
+                  <span class="shopping-category-count">
+                    {groupedUncheckedItems().get(category)?.length ?? 0}
+                  </span>
+                </h3>
                 <ul class="shopping-category-items">
                   <For each={groupedUncheckedItems().get(category) ?? []}>
                     {renderItem}
@@ -406,7 +438,12 @@ export default function ShoppingListPage() {
 
           <Show when={checkedItems().length > 0}>
             <div class="shopping-category-group checked-group">
-              <h3 class="shopping-category-header">Checked</h3>
+              <h3 class="shopping-category-header">
+                Checked
+                <span class="shopping-category-count">
+                  {checkedItems().length}
+                </span>
+              </h3>
               <ul class="shopping-category-items">
                 <For each={checkedItems()}>{renderItem}</For>
               </ul>

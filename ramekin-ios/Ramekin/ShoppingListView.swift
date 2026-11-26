@@ -259,29 +259,42 @@ struct ShoppingListView: View {
 
             // Unchecked items grouped by category
             ForEach(groupedUncheckedItems, id: \.category) { group in
-                Section(group.category) {
+                Section {
                     ForEach(group.items, id: \.id) { item in
                         itemRow(item)
                     }
                     .onDelete { offsets in
                         deleteItems(offsets.map { group.items[$0] })
                     }
+                } header: {
+                    sectionHeader(group.category, count: group.items.count)
                 }
             }
 
             // Checked items in a separate section at the bottom
             if !checked.isEmpty {
-                Section("Checked") {
+                Section {
                     ForEach(checked, id: \.id) { item in
                         itemRow(item)
                     }
                     .onDelete { offsets in
                         deleteItems(offsets.map { checked[$0] })
                     }
+                } header: {
+                    sectionHeader("Checked", count: checked.count)
                 }
             }
         }
         .listStyle(.plain)
+    }
+
+    private func sectionHeader(_ title: String, count: Int) -> some View {
+        HStack(spacing: 6) {
+            Text(title)
+            Text("\(count)")
+                .foregroundColor(.secondary)
+                .accessibilityLabel(count == 1 ? "1 item" : "\(count) items")
+        }
     }
 
     private func addItem() {
@@ -384,6 +397,13 @@ struct ShoppingItemRow: View {
                             .font(.body)
                             .strikethrough(item.isChecked)
                             .foregroundColor(item.isChecked ? .secondary : .primary)
+
+                        if let note = item.note, !note.isEmpty {
+                            Text(note)
+                                .font(.caption)
+                                .italic()
+                                .foregroundColor(.secondary)
+                        }
 
                         if let recipeTitle = item.sourceRecipeTitle {
                             Text(recipeTitle)
